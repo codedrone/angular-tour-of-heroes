@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroItemComponent implements OnInit {
 
-	hero = {
-		id: 1,
-		name: 'Name'
-	}
-
   constructor() { }
 
   ngOnInit() {

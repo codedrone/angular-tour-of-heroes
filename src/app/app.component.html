@@ -1,27 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <h1 class="app-title">
-    {{title}}
-  </h1>
-  <header>
-    <ul class="header-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#dashboard">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#heros">Heros</a>
-      </li>
-    </ul>
-  </header>
-  <div id="section_top_heros" class="section top-heros">
-    <app-heroes *ngFor="let item of topHeros; index as i"></app-heroes>
-  </div>
-  <div id="section_hero_editor" class="section hero-editor">
-    <app-hero-form></app-hero-form>
-  </div>
-  <div id="section_hero_list" class="section hero-list">
-    <h2>My Heros</h2>
-    <app-hero-item *ngFor="let item of heroList; index as i"></app-hero-item>
-  </div>
-</div>
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
 

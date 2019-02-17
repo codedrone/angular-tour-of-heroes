@@ -7,14 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-	hero = {
-		id: 1,
-		name: 'Name'
-	}
+	heroes: Array<{id:number, name:string}> = [
+    {
+      id:1,
+      name: "David"
+    },
+    {
+      id:2,
+      name: "Stephen"
+    },
+  ];
+  myHero: {id:number, name:string}
 	
   constructor() { }
 
   ngOnInit() {
+    this.updateLink(1);
+  }
+
+  updateLink(id:number) {
+    this.myHero = this.heroes[id - 1];
   }
 
 }
