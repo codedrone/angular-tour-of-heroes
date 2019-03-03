@@ -1,12 +1,12 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-      routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
+  <a *ngFor="let hero of heroes" class="col-1-4">
+    <app-hero-dashboard-item [name]="hero.name" (clicked)="onClickItem($event)"></app-hero-dashboard-item>
   </a>
   <ngx-spinner bdOpacity = 0.9 bdColor = "#333" size = "small" color = "#fff" type = "ball-8bits" fullScreen = "false"></ngx-spinner>
 </div>
 
 <app-hero-search></app-hero-search>
+<ul>
+	<li *ngFor="let message of messages">{{message}}</li>
+</ul>

@@ -10,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  messages: string[] = [];
 
   constructor(private heroService: HeroService, private spinner: NgxSpinnerService) { }
 
@@ -21,6 +22,9 @@ export class DashboardComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => {this.heroes = heroes.slice(1, 5);this.spinner.hide();});
+  }
+  onClickItem(message: string) {
+    this.messages.push(message);
   }
 
 }

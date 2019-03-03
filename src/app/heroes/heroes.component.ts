@@ -11,6 +11,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class HeroesComponent implements OnInit {
 	heroes: Hero[];
+  messages: string[] = [];
 
   constructor(private heroService: HeroService, private spinner: NgxSpinnerService) { }
 
@@ -38,5 +39,9 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
+  }
+
+  onClickItem(message: string) {
+    this.messages.push(message);
   }
 }

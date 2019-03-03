@@ -1,0 +1,14 @@
+.module {
+	padding: 20px;
+	text-align: center;
+	color: #eee;
+	max-height: 120px;
+	min-width: 120px;
+	border-radius: 2px;
+}
+.module.active {
+	background-color: #607D8B;
+}
+.module.non-active {
+	background-color: #999;
+}
