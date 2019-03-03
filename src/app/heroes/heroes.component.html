@@ -1,15 +1,21 @@
 <h2>My Heroes</h2>
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a (click)="updateLink(hero.id)">
+    <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
-	</a>
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
   </li>
+  <ngx-spinner bdOpacity = 0.9 bdColor = "#333" size = "small" color = "#fff" type = "ball-8bits" fullScreen = "false"></ngx-spinner>
 </ul>
-
-<div>
-	<p>{{myHero.name}} is my hero</p>
-	<a routerLink="/detail/{{myHero.id}}">View Details</a>
-</div>
-
